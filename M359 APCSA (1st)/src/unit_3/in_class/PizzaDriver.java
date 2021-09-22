@@ -19,5 +19,13 @@ public class PizzaDriver
 
         System.out.println("Comparing Jacks and Costco");
         System.out.println("Same:\t" + jacks.equals(costco)); // the "this" refers ot jacks
+
+        System.out.println("Compare Costco's inches to Georgio's inches");
+        System.out.println(costco.compareTo(georgios));
+        System.out.println(georgios.compareTo(costco));
+
+        System.out.println("Compare Jack's inches to Lou's inches");
+        System.out.println(jacks.compareTo(lous));
+        System.out.println(lous.compareTo(jacks));
     }
 }
