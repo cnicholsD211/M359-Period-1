@@ -27,7 +27,5 @@ public class PizzaDriver
         System.out.println("Compare Jack's inches to Lou's inches");
         System.out.println(jacks.compareTo(lous));
         System.out.println(lous.compareTo(jacks));
-
-        System.out.println("Mmmmmm pizza is delcious!");
     }
 }
