@@ -51,6 +51,16 @@ public class Pizza
             return 0;
     }
 
+    // toString()
+    public String toString(){
+        String output = "";
+        output += store + " Pizza\n";
+        output += "\tNumber of toppings:\t" + numToppings + "\n";
+        output += "\tSize of pizza:\t\t" + inches + "\n";
+        output += "\tIs a deep dish:\t\t" + isDeepDish + "\n";
+        return output;
+    }
+
     // getters and setters
     public String getStore() {
         return store;

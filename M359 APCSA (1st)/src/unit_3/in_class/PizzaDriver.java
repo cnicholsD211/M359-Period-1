@@ -10,6 +10,9 @@ public class PizzaDriver
         Pizza georgios = new Pizza("Georgio's", 14, 5, true);
         Pizza costco = new Pizza("Costco", 18, 3, false);
 
+        // print Pizza objects
+        System.out.println(lous);
+
         System.out.println("Comparing Lou's and Jacks");
         boolean lToJ = lous.equals(jacks); // the "this" reference refers to lous
         System.out.println("Same:\t" + lToJ);
