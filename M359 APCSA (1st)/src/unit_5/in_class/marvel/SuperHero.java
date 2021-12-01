@@ -6,11 +6,19 @@ public class SuperHero {
     private Power superPower;
     private int health;
 
+    // Static variables
+    private static int totalNumSuperHeroes = 0;
+    private static int totalHeroHealth = 0;
+    private static int totalHeroStrength = 0;
+
     // Full constructor
     public SuperHero(String name, Power superPower){
         this.name = name;
         this.superPower = superPower;
         this.health = 1000;
+        totalNumSuperHeroes++;
+        totalHeroHealth += 1000;
+        totalHeroStrength += superPower.getStrength();
     }
 
     /**
@@ -21,10 +29,16 @@ public class SuperHero {
         String output = "";
         output += "Hero's Name:\t\t" + name + "\n";
         output += "Hero's Health:\t\t" + health + "\n";
+        output += "Total # Heroes:\t\t" + totalNumSuperHeroes + "\n";
         output += "Hero's Power:\n";
         output += "\tName:\t\t\t" + superPower.getName() + "\n";
         output += "\tStrength:\t\t" + superPower.getStrength() + "\n";
         return output;
+    }
+
+    public static void getAvgStrength(){
+        double avg = (double) totalHeroStrength / totalNumSuperHeroes;
+        System.out.println("Average Strength:" + avg);
     }
 
     // Getters and setters
@@ -50,5 +64,29 @@ public class SuperHero {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public static int getTotalNumSuperHeroes() {
+        return totalNumSuperHeroes;
+    }
+
+    public static void setTotalNumSuperHeroes(int totalNumSuperHeroes) {
+        SuperHero.totalNumSuperHeroes = totalNumSuperHeroes;
+    }
+
+    public static int getTotalHeroHealth() {
+        return totalHeroHealth;
+    }
+
+    public static void setTotalHeroHealth(int totalHeroHealth) {
+        SuperHero.totalHeroHealth = totalHeroHealth;
+    }
+
+    public static int getTotalHeroStrength() {
+        return totalHeroStrength;
+    }
+
+    public static void setTotalHeroStrength(int totalHeroStrength) {
+        SuperHero.totalHeroStrength = totalHeroStrength;
     }
 }

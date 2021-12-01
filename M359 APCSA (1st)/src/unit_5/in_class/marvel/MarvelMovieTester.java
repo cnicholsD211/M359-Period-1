@@ -2,19 +2,26 @@ package unit_5.in_class.marvel;
 
 public class MarvelMovieTester {
     public static void main(String[] args) {
+        SuperHero.getAvgStrength();
         // Broken down creation of a SuperHero object
         String name = "The Hulk";
         Power superPower = new Power("Super Strength", 100);
         SuperHero hulk = new SuperHero(name, superPower);
+        // Initial Printout
+        System.out.println(hulk);
 
         // Concise creation of a SuperHero object
         SuperHero superman = new SuperHero("Superman", new Power("Flight", 75));
 
+        SuperHero.getAvgStrength();
+
         // Create a Villain named Loki with superStrength
         Villain loki = new Villain("Loki", new Power("Super Strength", 100));
 
-        // Initial Printout
-        System.out.println(hulk);
+        // Create a second Villain object
+        Villain venom = new Villain("Venom", new Power("Self-regenerating", 50));
+
+
 
         // change the hulk's Power strength
         hulk.getSuperPower().setStrength(150);
@@ -23,7 +30,7 @@ public class MarvelMovieTester {
         System.out.println(loki);
 
         battle(hulk, loki);
-
+        battle(superman, venom);
     }
 
     public static void battle(SuperHero goodGuy, Villain badGuy){
@@ -40,8 +47,12 @@ public class MarvelMovieTester {
             }
             if (villainHit) {
                 goodGuy.setHealth(goodGuy.getHealth() - badGuy.getSuperPower().getStrength());
+                goodGuy.setTotalHeroHealth(goodGuy.getTotalHeroHealth() - badGuy.getSuperPower().getStrength());
                 if (goodGuy.getHealth() < 0){
                     goodGuy.setHealth(0);
+                }
+                if (goodGuy.getTotalHeroHealth() < 0){
+                    goodGuy.setTotalHeroHealth(0);
                 }
                 System.out.println("Loki slashes the hulk!");
             }
@@ -53,6 +64,7 @@ public class MarvelMovieTester {
             // printout for health
             System.out.println("Hulk Health: " + goodGuy.getHealth());
             System.out.println("Loki Health: " + badGuy.getHealth());
+            System.out.println("Total Hero Health " + goodGuy.getTotalHeroHealth());
             System.out.println();
         }
 

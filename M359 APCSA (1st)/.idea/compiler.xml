@@ -4,6 +4,7 @@
     <excludeFromCompile>
       <file url="file://$PROJECT_DIR$/src/unit_3/lab/Chevy.java" />
       <file url="file://$PROJECT_DIR$/src/unit_3/lab/ChevyDriverStudent.java" />
+      <file url="file://$PROJECT_DIR$/src/unit_6/schedule/OriginalStudentTester.java" />
     </excludeFromCompile>
   </component>
 </project>
